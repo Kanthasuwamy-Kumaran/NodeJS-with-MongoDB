@@ -73,6 +73,7 @@ const routes = require('./routes/routes');
 //this employee path for routes
 // const routes = require('./routes/employeeRoutes');
 
+
 /*Use Route Middleware
 Use Routes:
 It tells the Express app to use the routes defined in the 'routes' module 

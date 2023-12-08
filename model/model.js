@@ -1,4 +1,4 @@
-//Schema
+//Schema model
 
 /*Import Mongoose:
 The code imports the Mongoose library to define a schema 

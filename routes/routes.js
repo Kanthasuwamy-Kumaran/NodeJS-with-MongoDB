@@ -7,6 +7,7 @@ const express = require('express');
 const router = express.Router()
 module.exports = router;
 
+//this code link the model file
 const Model = require('../model/model');
 
 //post name and age

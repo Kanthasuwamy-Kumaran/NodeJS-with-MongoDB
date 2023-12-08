@@ -20,14 +20,19 @@ require('dotenv').config();
 
 /*Import Dependencies
 Here, the code imports the Express.js 
-framework and the Mongoose library for MongoDB.*/
+framework and the */
 const express = require('express');
+//Mongoose library for MongoDB.
 const mongoose = require('mongoose');
 
-/*Database Connection:
-It establishes a connection to the MongoDB database 
-using the connection string from the environment variable DATABASE_URL.*/
+
+//Database Connection:
+
+/*The line declares a constant variable 
+named mongoString and assigns the value of process.env.DATABASE_URL to it.*/
 const mongoString = process.env.DATABASE_URL;
+/*It establishes a connection to the MongoDB database 
+using the connection string from the environment variable DATABASE_URL.*/
 mongoose.connect(mongoString);
 const database = mongoose.connection;
 
@@ -35,7 +40,10 @@ const database = mongoose.connection;
 These lines handle events related to the database connection. 
 If there's an error, it's logged. 
 Once the connection is successful, it logs a message.*/
+//Database Event Handling
+//Callback Function:
 database.on('error', (error) => {
+    //Logging the Error:
     console.log(error)
 })
 
@@ -70,8 +78,9 @@ app.listen(3000, () => {
 It imports the route definitions from the './routes/routes' file. 
 Routes are typically used to define the API endpoints and their corresponding handlers.*/
 const routes = require('./routes/routes');
+
 //this employee path for routes
-// const routes = require('./routes/employeeRoutes');
+const routes2 = require('./routes/employeeRoutes');
 
 
 /*Use Route Middleware
@@ -79,3 +88,5 @@ Use Routes:
 It tells the Express app to use the routes defined in the 'routes' module 
 when requests with the '/api' prefix are received.*/
 app.use('/api', routes)
+app.use('/api/employee',routes2)
+
